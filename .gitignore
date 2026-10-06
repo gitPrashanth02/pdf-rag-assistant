@@ -12,6 +12,7 @@ __pycache__/
 
 # Uploaded documents and generated RAG artifacts
 data/*.pdf
+data/desktop.ini
 chatgpt.json
 chatgpt.md
 chatgpt_chunks.jsonl
