@@ -1,0 +1,21 @@
+# Python environments and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local secrets and editor files
+.env
+.env.*
+!.env.example
+.vscode/
+
+# Uploaded documents and generated RAG artifacts
+data/*.pdf
+chatgpt.json
+chatgpt.md
+chatgpt_chunks.jsonl
+chroma_db/
+
+# Local model and tool caches
+.cache/

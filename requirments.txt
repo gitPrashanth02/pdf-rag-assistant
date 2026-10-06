@@ -1,0 +1,11 @@
+langchain-text-splitters
+numpy
+torch
+transformers
+faiss-cpu
+flask
+streamlit
+mineru>=4.0,<5
+sentence-transformers
+chromadb
+retrieval
