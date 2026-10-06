@@ -13,7 +13,7 @@ from functools import lru_cache
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from retrival import hybrid_search, load_index, rerank
+from .retrival import hybrid_search, load_index, rerank
 
 LLM_MODEL = "Qwen/Qwen2.5-0.5B-Instruct"
 TOP_K = 3

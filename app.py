@@ -1,6 +1,6 @@
 import streamlit as st
 
-from pipeline import PDF_PATH, ingest_pdf, run_query
+from pdf_rag.pipeline import PDF_PATH, ingest_pdf, run_query
 
 
 st.set_page_config(page_title="Advance RAG Chat", page_icon="📚")

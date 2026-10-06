@@ -51,27 +51,27 @@ Uploading a document again rebuilds the parsed text, chunks, and vector index. T
 
 ## Pipeline
 
-1. `parse_pdf.py` parses the PDF with MinerU and writes Markdown and JSON output.
-2. `chunking_markdown.py` reads MinerU's page data and writes page-tagged records to `chatgpt_chunks.jsonl`.
-3. `embedding.py` embeds the chunks and stores their text and metadata in `chroma_db/`.
-4. `retrival.py` combines vector and lexical search and reranks candidate chunks.
-5. `generation.py` builds the grounded prompt and generates the answer with page citations.
+1. `pdf_rag/parse_pdf.py` parses the PDF with MinerU and writes Markdown and JSON output.
+2. `pdf_rag/chunking_markdown.py` reads MinerU's page data and writes page-tagged records to `chatgpt_chunks.jsonl`.
+3. `pdf_rag/embedding.py` embeds the chunks and stores their text and metadata in `chroma_db/`.
+4. `pdf_rag/retrival.py` combines vector and lexical search and reranks candidate chunks.
+5. `pdf_rag/generation.py` builds the grounded prompt and generates the answer with page citations.
 
-The Streamlit upload flow runs these steps through `pipeline.py`. To use the standalone pipeline, place a PDF at `data/chatgpt.pdf` first:
+The Streamlit upload flow runs these steps through `pdf_rag/pipeline.py`. To use the standalone pipeline, place a PDF at `data/chatgpt.pdf` first:
 
 ```bash
-python pipeline.py --force
+python -m pdf_rag.pipeline --force
 ```
 
 ## Project files
 
 - `app.py`: Streamlit user interface
-- `pipeline.py`: ingestion and query orchestration
-- `parse_pdf.py`: PDF parsing
-- `chunking_markdown.py`: page-aware text chunking
-- `embedding.py`: embedding and ChromaDB indexing
-- `retrival.py`: semantic and lexical retrieval with reranking
-- `generation.py`: answer generation
+- `pdf_rag/pipeline.py`: ingestion and query orchestration
+- `pdf_rag/parse_pdf.py`: PDF parsing
+- `pdf_rag/chunking_markdown.py`: page-aware text chunking
+- `pdf_rag/embedding.py`: embedding and ChromaDB indexing
+- `pdf_rag/retrival.py`: semantic and lexical retrieval with reranking
+- `pdf_rag/generation.py`: answer generation
 - `requirments.txt`: Python dependencies
 
 Generated outputs include `chatgpt.md`, `chatgpt.json`, `chatgpt_chunks.jsonl`, and `chroma_db/`. The uploaded PDF is stored at `data/chatgpt.pdf` by the current app.

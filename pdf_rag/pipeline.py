@@ -17,11 +17,8 @@ Run:  python pipeline.py                         # build (if needed) + ask quest
 import argparse
 from pathlib import Path
 
-import chunking_markdown
-import parse_pdf
-import embedding
-import generation
-from retrival import load_index
+from . import chunking_markdown, embedding, generation, parse_pdf
+from .retrival import load_index
 
 PDF_PATH = Path("data/chatgpt.pdf")
 
